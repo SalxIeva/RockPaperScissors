@@ -23,9 +23,25 @@ console.log(getComputerChoice());
 // Your game will be played by a human player. You will write a function that takes the user choice and returns it.
 
 // Create a new function named getHumanChoice.
-// Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
-// Hint: Use the prompt method to get the user’s input.
+// Use the prompt method to get the user’s input.
+let getHumanChoice = () => {
+    const userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.");
+    console.log(userInput)
+    // Convert user input to lover case
+    const userInputLowerCase = userInput.toLowerCase();
+    // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
+    if (userInput === "rock") {
+        return "You selected 'Rock'"
+    } else if (userInput === "paper") {
+        return "You selected 'Paper'"
+    } else if (userInput === "scissors") {
+        return "You selected 'Scissors'"
+    } else {
+        return "Please select a valid input."
+    }
+}
 // Test what your function returns by using console.log.
+console.log(getHumanChoice());
 // ------ Declare the players score variables -----
 // Your game will keep track of the players score. You will write variables to keep track of the players score.
 
