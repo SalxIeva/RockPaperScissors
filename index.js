@@ -28,7 +28,7 @@ let getHumanChoice = () => {
     const userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.");
     console.log(userInput)
     // Convert user input to lover case
-    const userInputLowerCase = userInput.toLowerCase();
+    // const userInputLowerCase = userInput.toLowerCase();
     // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
     if (userInput === "rock") {
         return "You selected 'Rock'"
@@ -54,9 +54,35 @@ let computerScore = 0;
 
 // Create a new function named playRound.
 // Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.
-// Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
-// Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
-// Increment the humanScore or computerScore variable based on the round winner.
+let playRound = (humanChoice, computerChoice) => {
+    // Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
+    const humanChoiceLowerCase = humanChoice.toLowerCase();
+    let result;
+    // Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
+    if (humanChoiceLowerCase === "rock" && computerChoice === "Paper") {
+        result = "You lose! Paper beats Rock";
+        // Increment the humanScore or computerScore variable based on the round winner.
+        computerScore++;
+    } else if (humanChoiceLowerCase === "rock" && computerChoice === "Scissors") {
+        result = "You win! Rock beats Scissors";
+        humanScore++;
+    } else if (humanChoiceLowerCase === "paper" && computerChoice === "Rock") {
+        result = "You win! Paper beats Rock";
+        humanScore++;
+    } else if (humanChoiceLowerCase === "paper" && computerChoice === "Rock") {
+        result = "You lose! Paper beats Rock";
+        computerScore++
+    } else if (humanChoiceLowerCase === "scissors" && computerChoice === "Paper") {
+        result = "You win! Scissors beats paper";
+        humanScore++;
+    } else if (humanChoiceLowerCase === "scissors" && computerChoice === "Rock") {
+        result = "You lose! Scissors beats paper";
+        computerScore++;
+    } else {
+        return "It's a tie!"
+    }
+
+}
 
 // ----- Write the logic to play a single round -----
 // Your game will be played round by round. You will write a function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
