@@ -18,7 +18,6 @@ let getComputerChoice = () => {
 // Test that your function returns what you expect using console.log or the browser developer tools before advancing to the next step.
 console.log(getComputerChoice());
 
-const computerChoice = getComputerChoice();
 // ----- Write the logic to get the human choice ------
 
 // Create a new function named getHumanChoice.
@@ -42,7 +41,6 @@ let getHumanChoice = () => {
 // Test what your function returns by using console.log.
 console.log(getHumanChoice());
 
-const humanChoice = getComputerChoice();
 
 // ------ Declare the players score variables -----
 
@@ -50,10 +48,6 @@ const humanChoice = getComputerChoice();
 let humanScore = 0;
 let computerScore = 0;
 
-// ----- Write the logic to play a single round -----
-
-
-// ----- Write the logic to play the entire game -----
 
 // Create a new function named playGame.
 let playGame = () => {
@@ -64,7 +58,8 @@ let playGame = () => {
         // Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
         const humanChoiceLowerCase = humanChoice.toLowerCase();
         let result;
-        console.log('lower case: ' + humanChoiceLowerCase)
+        // console.log('lower case: ' + humanChoiceLowerCase)
+
         // Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
         if (humanChoiceLowerCase === "rock" && computerChoice === "Paper") {
             result = "You lose! Paper beats Rock";
@@ -76,14 +71,14 @@ let playGame = () => {
         } else if (humanChoiceLowerCase === "paper" && computerChoice === "Rock") {
             result = "You win! Paper beats Rock";
             humanScore++;
-        } else if (humanChoiceLowerCase === "paper" && computerChoice === "Rock") {
-            result = "You lose! Paper beats Rock";
+        } else if (humanChoiceLowerCase === "paper" && computerChoice === "scissors") {
+            result = "You lose! Scissors beats Paper";
             computerScore++
         } else if (humanChoiceLowerCase === "scissors" && computerChoice === "Paper") {
-            result = "You win! Scissors beats paper";
+            result = "You win! Scissors beats Paper";
             humanScore++;
         } else if (humanChoiceLowerCase === "scissors" && computerChoice === "Rock") {
-            result = "You lose! Scissors beats paper";
+            result = "You lose! Rock beats Scissors";
             computerScore++;
         } else {
             result = "It's a tie!"
@@ -91,8 +86,6 @@ let playGame = () => {
         return result;
     }
 
-    humanScore = 0; 
-    computerScore = 0;
     
     for (let i = 0; i < 5; i++) {
         // playRound(humanChoice, computerChoice);
@@ -103,7 +96,7 @@ let playGame = () => {
         console.log(`Human: ${humanChoice}`);
         console.log(`Computer: ${computerChoice}`);
         const result = playRound(humanChoice, computerChoice);
-        console.log(result);
+        // console.log(result);
     }
 
     // Declaring the overall winner
