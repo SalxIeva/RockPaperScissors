@@ -96,7 +96,10 @@ let playGame = () => {
             console.log(humanChoice);
             // repeat the round if input is not valid.
             i--;
-        } 
+        } else if (humanChoice === null) {
+            return "Game cancelled";
+        }
+
         const computerChoice = getComputerChoice();
         console.log(`Round ${i + 1}:`);
         console.log(`Human: ${humanChoice}`);
