@@ -36,7 +36,7 @@ let getHumanChoice = () => {
     } else if (userInput === "scissors") {
         return "Scissors"
     } else {
-        return "Please select a valid input."
+        return "Please enter a valid input."
     }
 }
 // Test what your function returns by using console.log.
@@ -87,6 +87,11 @@ let playGame = () => {
     for (let i = 0; i < 5; i++) {
         // playRound(humanChoice, computerChoice);
         let humanChoice = getHumanChoice();
+        if (humanChoice === "Please enter a valid input.") {
+            console.log(humanChoice);
+            // repeat the round if input is not valid.
+            i--;
+        };
         const computerChoice = getComputerChoice();
         console.log(`Round ${i + 1}:`);
         console.log(`Human: ${humanChoice}`);
