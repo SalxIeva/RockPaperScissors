@@ -21,19 +21,20 @@ console.log(getComputerChoice());
 // ----- Write the logic to get the human choice ------
 
 // Create a new function named getHumanChoice.
-// Use the prompt method to get the user’s input.
 let getHumanChoice = () => {
-    const userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.");
-    console.log(userInput)
+    // Use the prompt method to get the user’s input.
     // Convert user input to lover case
+    const userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.").toLowerCase();
+    console.log(userInput)
     // const userInputLowerCase = userInput.toLowerCase();
+
     // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
     if (userInput === "rock") {
-        return "You selected 'Rock'"
+        return "Rock"
     } else if (userInput === "paper") {
-        return "You selected 'Paper'"
+        return "Paper"
     } else if (userInput === "scissors") {
-        return "You selected 'Scissors'"
+        return "Scissors"
     } else {
         return "Please select a valid input."
     }
@@ -90,13 +91,12 @@ let playGame = () => {
     for (let i = 0; i < 5; i++) {
         // playRound(humanChoice, computerChoice);
         const humanChoice = getHumanChoice();
-
         const computerChoice = getComputerChoice();
         console.log(`Round ${i + 1}:`);
         console.log(`Human: ${humanChoice}`);
         console.log(`Computer: ${computerChoice}`);
         const result = playRound(humanChoice, computerChoice);
-        // console.log(result);
+        console.log(result);
     }
 
     // Declaring the overall winner
