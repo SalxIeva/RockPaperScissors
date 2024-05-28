@@ -25,7 +25,7 @@ let getHumanChoice = () => {
     // Use the prompt method to get the user’s input.
     // Convert user input to lover case
     const userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.").toLowerCase();
-    console.log(userInput)
+    // console.log(userInput)
     // const userInputLowerCase = userInput.toLowerCase();
 
     // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
@@ -43,8 +43,6 @@ let getHumanChoice = () => {
 console.log(getHumanChoice());
 
 
-// ------ Declare the players score variables -----
-
 // Create two new variables named humanScore and computerScore in the global scope and initialize them with value of 0.
 let humanScore = 0;
 let computerScore = 0;
@@ -52,11 +50,9 @@ let computerScore = 0;
 
 // Create a new function named playGame.
 let playGame = () => {
-    
-    // Create a new function named playRound.
-    // Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.
+    // Create a new function named playRound with two parameters: humanChoice and computerChoice.
     let playRound = (humanChoice, computerChoice) => {
-        // Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
+        // Make function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
         const humanChoiceLowerCase = humanChoice.toLowerCase();
         let result;
         // console.log('lower case: ' + humanChoiceLowerCase)
@@ -90,7 +86,7 @@ let playGame = () => {
     
     for (let i = 0; i < 5; i++) {
         // playRound(humanChoice, computerChoice);
-        const humanChoice = getHumanChoice();
+        let humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
         console.log(`Round ${i + 1}:`);
         console.log(`Human: ${humanChoice}`);
