@@ -66,23 +66,23 @@ let playGame = () => {
         // console.log('lower case: ' + humanChoiceLowerCase)
 
         // Write the code for playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
-        if (humanChoiceLowerCase === "rock" && computerChoice === "Paper") {
+        if (humanChoice === "rock" && computerChoice === "Paper") {
             result = "You lose! Paper beats Rock";
             // Increment the humanScore or computerScore variable based on the round winner.
             computerScore++;
-        } else if (humanChoiceLowerCase === "rock" && computerChoice === "Scissors") {
+        } else if (humanChoice === "rock" && computerChoice === "Scissors") {
             result = "You win! Rock beats Scissors";
             humanScore++;
-        } else if (humanChoiceLowerCase === "paper" && computerChoice === "Rock") {
+        } else if (humanChoice === "paper" && computerChoice === "Rock") {
             result = "You win! Paper beats Rock";
             humanScore++;
-        } else if (humanChoiceLowerCase === "paper" && computerChoice === "scissors") {
+        } else if (humanChoice === "paper" && computerChoice === "Scissors") {
             result = "You lose! Scissors beats Paper";
             computerScore++
-        } else if (humanChoiceLowerCase === "scissors" && computerChoice === "Paper") {
+        } else if (humanChoice === "scissors" && computerChoice === "Paper") {
             result = "You win! Scissors beats Paper";
             humanScore++;
-        } else if (humanChoiceLowerCase === "scissors" && computerChoice === "Rock") {
+        } else if (humanChoice === "scissors" && computerChoice === "Rock") {
             result = "You lose! Rock beats Scissors";
             computerScore++;
         } else {
@@ -95,11 +95,11 @@ let playGame = () => {
     for (let i = 0; i < 5; i++) {
         // playRound(humanChoice, computerChoice);
         let humanChoice = getHumanChoice();
-        if (humanChoice === "Please enter a valid input.") {
-            console.log(humanChoice);
-            // repeat the round if input is not valid.
-            i--;
-        } 
+        
+        if (humanChoice === null) {
+            console.log("Game cancelled");
+            return;
+        }
 
         const computerChoice = getComputerChoice();
         console.log(`Round ${i + 1}:`);
