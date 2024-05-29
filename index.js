@@ -56,8 +56,11 @@ let computerScore = 0;
 let playGame = () => {
     // Create a new function named playRound with two parameters: humanChoice and computerChoice.
     let playRound = (humanChoice, computerChoice) => {
+        if (humanChoice === null) {
+            return "Game cancelled";
+        }
         // Make function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
-        const humanChoiceLowerCase = humanChoice.toLowerCase();
+        humanChoice = humanChoice.toLowerCase();
         // console.log(typeof humanChoiceLowerCase);
         let result;
         // console.log('lower case: ' + humanChoiceLowerCase)
