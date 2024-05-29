@@ -1,6 +1,3 @@
-// console.log 'Hello World!' to check if index.js is linked and working
-// console.log('Hello World!');
-
 // Create a new function named getComputerChoice.
 let getComputerChoice = () => {
     const randomNum = Math.floor(Math.random() * 3);
@@ -13,14 +10,10 @@ let getComputerChoice = () => {
         return "Scissors"
     }
 }
-// Test that your function returns what you expect using console.log or the browser developer tools before advancing to the next step.
-// console.log(getComputerChoice());
-
 
 // Create a new function named getHumanChoice.
 let getHumanChoice = () => {
-    // Use the prompt method to get the user’s input.
-    // Convert user input to lover case
+    // Use the prompt method to get the user’s input and convert it to lover case.
     while (true) {
         let userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.");
         if (userInput === null) {
@@ -28,8 +21,6 @@ let getHumanChoice = () => {
             return null;
         }
         userInput = userInput.toLowerCase();
-    // console.log(userInput)
-    // const userInputLowerCase = userInput.toLowerCase();
 
     // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
         if (userInput === "rock") {
@@ -43,9 +34,6 @@ let getHumanChoice = () => {
         }
     }
 }
-// Test what your function returns by using console.log.
-// console.log(getHumanChoice());
-
 
 // Create two new variables named humanScore and computerScore in the global scope and initialize them with value of 0.
 let humanScore = 0;
@@ -61,9 +49,7 @@ let playGame = () => {
         }
         // Make function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
         humanChoice = humanChoice.toLowerCase();
-        // console.log(typeof humanChoiceLowerCase);
         let result;
-        // console.log('lower case: ' + humanChoiceLowerCase)
 
         // Write the code for playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
         if (humanChoice === "rock" && computerChoice === "Paper") {
@@ -93,7 +79,6 @@ let playGame = () => {
 
     
     for (let i = 0; i < 5; i++) {
-        // playRound(humanChoice, computerChoice);
         let humanChoice = getHumanChoice();
 
         if (humanChoice === null) {
