@@ -1,8 +1,6 @@
 // console.log 'Hello World!' to check if index.js is linked and working
 // console.log('Hello World!');
 
-// ----- Write the logic to get the computers choice. -----
-
 // Create a new function named getComputerChoice.
 let getComputerChoice = () => {
     const randomNum = Math.floor(Math.random() * 3);
@@ -18,30 +16,31 @@ let getComputerChoice = () => {
 // Test that your function returns what you expect using console.log or the browser developer tools before advancing to the next step.
 // console.log(getComputerChoice());
 
-// ----- Write the logic to get the human choice ------
 
 // Create a new function named getHumanChoice.
 let getHumanChoice = () => {
     // Use the prompt method to get the user’s input.
     // Convert user input to lover case
-    let userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.");
-    if (userInput === null) {
-        alert("Okey then, byeeeee..");
-        return null;
-    }
-    userInput = userInput.toLowerCase();
+    while (true) {
+        let userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.");
+        if (userInput === null) {
+            alert("Okey then, byeeeee..");
+            return null;
+        }
+        userInput = userInput.toLowerCase();
     // console.log(userInput)
     // const userInputLowerCase = userInput.toLowerCase();
 
     // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
-    if (userInput === "rock") {
-        return "Rock"
-    } else if (userInput === "paper") {
-        return "Paper"
-    } else if (userInput === "scissors") {
-        return "Scissors"
-    } else {
-        return "Please enter a valid input."
+        if (userInput === "rock") {
+            return "Rock"
+        } else if (userInput === "paper") {
+            return "Paper"
+        } else if (userInput === "scissors") {
+            return "Scissors"
+        } else {
+            alert("Please enter a valid input.");
+        }
     }
 }
 // Test what your function returns by using console.log.
@@ -59,10 +58,11 @@ let playGame = () => {
     let playRound = (humanChoice, computerChoice) => {
         // Make function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
         const humanChoiceLowerCase = humanChoice.toLowerCase();
+        // console.log(typeof humanChoiceLowerCase);
         let result;
         // console.log('lower case: ' + humanChoiceLowerCase)
 
-        // Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
+        // Write the code for playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
         if (humanChoiceLowerCase === "rock" && computerChoice === "Paper") {
             result = "You lose! Paper beats Rock";
             // Increment the humanScore or computerScore variable based on the round winner.
@@ -96,9 +96,7 @@ let playGame = () => {
             console.log(humanChoice);
             // repeat the round if input is not valid.
             i--;
-        } else if (humanChoice === null) {
-            return "Game cancelled";
-        }
+        } 
 
         const computerChoice = getComputerChoice();
         console.log(`Round ${i + 1}:`);
