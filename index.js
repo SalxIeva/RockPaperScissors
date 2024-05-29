@@ -1,8 +1,5 @@
 // console.log 'Hello World!' to check if index.js is linked and working
-console.log('Hello World!');
-
-// Your game will be played against the computer. You will write a function that randomly returns “rock”, “paper” or “scissors”.
-// ----- Write the logic to get the computers choice. -----
+// console.log('Hello World!');
 
 // Create a new function named getComputerChoice.
 let getComputerChoice = () => {
@@ -17,52 +14,113 @@ let getComputerChoice = () => {
     }
 }
 // Test that your function returns what you expect using console.log or the browser developer tools before advancing to the next step.
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
-// ----- Write the logic to get the human choice ------
-// Your game will be played by a human player. You will write a function that takes the user choice and returns it.
 
 // Create a new function named getHumanChoice.
-// Use the prompt method to get the user’s input.
 let getHumanChoice = () => {
-    const userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.");
-    console.log(userInput)
+    // Use the prompt method to get the user’s input.
     // Convert user input to lover case
-    const userInputLowerCase = userInput.toLowerCase();
+    while (true) {
+        let userInput = prompt("Please enter 'Rock', 'Paper' or 'Scissors'.");
+        if (userInput === null) {
+            alert("Okey then, byeeeee..");
+            return null;
+        }
+        userInput = userInput.toLowerCase();
+    // console.log(userInput)
+    // const userInputLowerCase = userInput.toLowerCase();
+
     // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
-    if (userInput === "rock") {
-        return "You selected 'Rock'"
-    } else if (userInput === "paper") {
-        return "You selected 'Paper'"
-    } else if (userInput === "scissors") {
-        return "You selected 'Scissors'"
-    } else {
-        return "Please select a valid input."
+        if (userInput === "rock") {
+            return "Rock"
+        } else if (userInput === "paper") {
+            return "Paper"
+        } else if (userInput === "scissors") {
+            return "Scissors"
+        } else {
+            alert("Please enter a valid input.");
+        }
     }
 }
 // Test what your function returns by using console.log.
-console.log(getHumanChoice());
-// ------ Declare the players score variables -----
-// Your game will keep track of the players score. You will write variables to keep track of the players score.
+// console.log(getHumanChoice());
+
 
 // Create two new variables named humanScore and computerScore in the global scope and initialize them with value of 0.
 let humanScore = 0;
 let computerScore = 0;
 
-// ----- Write the logic to play a single round -----
-// Your game will be played round by round. You will write a function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
 
-// Create a new function named playRound.
-// Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.
-// Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
-// Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
-// Increment the humanScore or computerScore variable based on the round winner.
+// Create a new function named playGame.
+let playGame = () => {
+    // Create a new function named playRound with two parameters: humanChoice and computerChoice.
+    let playRound = (humanChoice, computerChoice) => {
+        if (humanChoice === null) {
+            return "Game cancelled";
+        }
+        // Make function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
+        humanChoice = humanChoice.toLowerCase();
+        // console.log(typeof humanChoiceLowerCase);
+        let result;
+        // console.log('lower case: ' + humanChoiceLowerCase)
 
-// ----- Write the logic to play a single round -----
-// Your game will be played round by round. You will write a function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
+        // Write the code for playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
+        if (humanChoice === "rock" && computerChoice === "Paper") {
+            result = "You lose! Paper beats Rock";
+            // Increment the humanScore or computerScore variable based on the round winner.
+            computerScore++;
+        } else if (humanChoice === "rock" && computerChoice === "Scissors") {
+            result = "You win! Rock beats Scissors";
+            humanScore++;
+        } else if (humanChoice === "paper" && computerChoice === "Rock") {
+            result = "You win! Paper beats Rock";
+            humanScore++;
+        } else if (humanChoice === "paper" && computerChoice === "Scissors") {
+            result = "You lose! Scissors beats Paper";
+            computerScore++
+        } else if (humanChoice === "scissors" && computerChoice === "Paper") {
+            result = "You win! Scissors beats Paper";
+            humanScore++;
+        } else if (humanChoice === "scissors" && computerChoice === "Rock") {
+            result = "You lose! Rock beats Scissors";
+            computerScore++;
+        } else {
+            result = "It's a tie!"
+        }
+        return result;
+    }
 
-// Create a new function named playRound.
-// Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.
-// Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
-// Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
-// Increment the humanScore or computerScore variable based on the round winner.
+    
+    for (let i = 0; i < 5; i++) {
+        // playRound(humanChoice, computerChoice);
+        let humanChoice = getHumanChoice();
+
+        if (humanChoice === null) {
+            console.log("Game cancelled");
+            return;
+        }
+
+        const computerChoice = getComputerChoice();
+        console.log(`Round ${i + 1}:`);
+        console.log(`Human: ${humanChoice}`);
+        console.log(`Computer: ${computerChoice}`);
+        const result = playRound(humanChoice, computerChoice);
+        console.log(result);
+    }
+
+    // Declaring the overall winner
+    if (humanScore > computerScore) {
+        alert(`You win the game! Final score: Human ${humanScore} - Computer ${computerScore}`);
+        console.log(`You win the game! Final score: Human ${humanScore} - Computer ${computerScore}`);
+    } else if (humanScore < computerScore) {
+        alert(`You lose the game! Final score: Human ${humanScore} - Computer ${computerScore}`);
+        console.log(`You lose the game! Final score: Human ${humanScore} - Computer ${computerScore}`);
+    } else {
+        alert(`The game is a tie! Final score: Human ${humanScore} - Computer ${computerScore}`);
+        console.log(`The game is a tie! Final score: Human ${humanScore} - Computer ${computerScore}`);
+    }
+};
+
+// call playGame function
+playGame();
