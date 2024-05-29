@@ -95,7 +95,7 @@ let playGame = () => {
     for (let i = 0; i < 5; i++) {
         // playRound(humanChoice, computerChoice);
         let humanChoice = getHumanChoice();
-        
+
         if (humanChoice === null) {
             console.log("Game cancelled");
             return;
@@ -111,10 +111,13 @@ let playGame = () => {
 
     // Declaring the overall winner
     if (humanScore > computerScore) {
+        alert(`You win the game! Final score: Human ${humanScore} - Computer ${computerScore}`);
         console.log(`You win the game! Final score: Human ${humanScore} - Computer ${computerScore}`);
     } else if (humanScore < computerScore) {
+        alert(`You lose the game! Final score: Human ${humanScore} - Computer ${computerScore}`);
         console.log(`You lose the game! Final score: Human ${humanScore} - Computer ${computerScore}`);
     } else {
+        alert(`The game is a tie! Final score: Human ${humanScore} - Computer ${computerScore}`);
         console.log(`The game is a tie! Final score: Human ${humanScore} - Computer ${computerScore}`);
     }
 };
