@@ -37,7 +37,7 @@ body {
 }
 
 div {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 #score {
@@ -46,4 +46,15 @@ div {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     text-align: center;
+    margin: 40px;
 }
+
+#result {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: bisque;
+    padding: 10px;
+}
+

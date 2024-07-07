@@ -35,8 +35,8 @@ let playGame = () => {
     btnDiv.appendChild(scissorsBtn);
     btnDiv.appendChild(paperBtn);
     document.body.appendChild(btnDiv);
-
-
+    
+    
     // Creating and appending score and result display elements
     const score = document.createElement("div");
     score.id = "score";
@@ -45,8 +45,9 @@ let playGame = () => {
     const result = document.createElement("div");
     result.id = "result";
     document.body.appendChild(result);
-
+    
     const roundSect = document.createElement("div");
+    roundSect.id = "round";
     const humanChoiceSect = document.createElement("div");
     const compChoiceSect = document.createElement("div");
 
@@ -62,7 +63,7 @@ let playGame = () => {
         }
         let computerChoice = getComputerChoice();
         
-        roundSect.textContent = `Round ${roundCount + 1}:`;
+        roundSect.textContent = `Round ${roundCount + 1}`;
         humanChoiceSect.textContent = `Human: ${humanChoice}`;
         compChoiceSect.textContent = `Computer: ${computerChoice}`;
 
