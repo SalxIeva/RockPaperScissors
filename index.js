@@ -20,6 +20,13 @@ let roundCount = 0;
 
 // PlayGame function
 let playGame = () => {
+        // Reset scores and round count for a new game
+        humanScore = 0;
+        computerScore = 0;
+        roundCount = 0;
+        
+        // Clear existing result, score, and buttons if they exist
+        document.body.innerHTML = '';
     
     // Create buttons and append to the DOM
     const btnDiv = document.createElement("div");
@@ -98,17 +105,19 @@ let playGame = () => {
         if (roundCount >= 5) {
             // Declaring the overall winner
             if (humanScore > computerScore) {
-                score.textContent += ` You win the game! Final score: Human ${humanScore} - Computer ${computerScore}`;
+                score.textContent = ` You win the game! Final score: Human ${humanScore} - Computer ${computerScore}`;
             } else if (humanScore < computerScore) {
-                score.textContent += ` You lose the game! Final score: Human ${humanScore} - Computer ${computerScore}`;
+                score.textContent = ` You lose the game! Final score: Human ${humanScore} - Computer ${computerScore}`;
             } else {
-                score.textContent += ` The game is a tie! Final score: Human ${humanScore} - Computer ${computerScore}`;
+                score.textContent = ` The game is a tie! Final score: Human ${humanScore} - Computer ${computerScore}`;
             }
             
             // Disable the buttons after 5 rounds
             rockBtn.disabled = true;
             scissorsBtn.disabled = true;
             paperBtn.disabled = true;
+            // score.style.display = 'none';
+            restart();
         }
     };
 
@@ -120,3 +129,12 @@ let playGame = () => {
 
 // Call playGame function
 playGame();
+
+function restart() {
+    const restartBtn = document.createElement("button");
+    restartBtn.id = "restart";
+    restartBtn.textContent = "Play Again!";
+    restartBtn.addEventListener("click", () => playGame());
+    document.body.appendChild(restartBtn);
+}
+
