@@ -131,10 +131,12 @@ let playGame = () => {
 playGame();
 
 function restart() {
+    const restartBtnDiv = document.createElement("div");
+    restartBtnDiv.id = "restart"
     const restartBtn = document.createElement("button");
-    restartBtn.id = "restart";
     restartBtn.textContent = "Play Again!";
     restartBtn.addEventListener("click", () => playGame());
-    document.body.appendChild(restartBtn);
+    restartBtnDiv.appendChild(restartBtn);
+    document.body.appendChild(restartBtnDiv);
 }
 

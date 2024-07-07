@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(251, 243, 234);
+    max-width: 100%;
+}
+
 h1 {
     text-align: center;
     background-color: bisque;
@@ -32,9 +37,6 @@ button:hover {
     box-shadow: 5px 2px 2px #373737;
 }
 
-body {
-    background-color: rgb(251, 243, 234);
-}
 
 div {
     margin-top: 10px; 
@@ -62,3 +64,18 @@ div {
     padding: 10px;
 }
 
+#restart {
+    width:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#restart button {
+    background-color: #bb1414;
+    color: bisque;
+}
+
+#restart button:hover {
+    background-color: #850303;
+}
