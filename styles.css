@@ -1,21 +1,10 @@
 body {
     background-color: rgb(251, 243, 234);
-    max-width: 100%;
+    margin: 40px;
 }
-
-h1 {
-    text-align: center;
-    background-color: bisque;
-    padding: 20px;
-    font-style: italic;
-    margin-bottom: 100px;
-    box-shadow: 10px 5px 5px #373737;
-}
-
-
 
 #buttons {
-    width: auto;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +54,7 @@ div {
 }
 
 #restart {
-    width:auto;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,4 +67,13 @@ div {
 
 #restart button:hover {
     background-color: #850303;
+}
+
+h1 {
+    text-align: center;
+    background-color: bisque;
+    padding: 20px;
+    margin-bottom: 100px;
+    box-shadow: 10px 5px 5px #373737;
+    font-style: italic;
 }

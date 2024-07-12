@@ -1,4 +1,6 @@
 
+
+
 // Function getComputerChoice
 let getComputerChoice = () => {
     const randomNum = Math.floor(Math.random() * 3);
@@ -20,14 +22,27 @@ let roundCount = 0;
 
 // PlayGame function
 let playGame = () => {
-        // Reset scores and round count for a new game
-        humanScore = 0;
-        computerScore = 0;
-        roundCount = 0;
-        
-        // Clear existing result, score, and buttons if they exist
-        document.body.innerHTML = '';
+    // Reset scores and round count for a new game
+    humanScore = 0;
+    computerScore = 0;
+    roundCount = 0;
     
+    // Clear existing result, score, and buttons if they exist
+    document.body.innerHTML = '';
+    
+    // Create a container div
+    const displayDiv = document.createElement("div");
+    displayDiv.id = 'header';
+    
+    // Create an h1 element
+    const displayMsg = document.createElement("h1");
+    displayMsg.textContent = 'Hello! Can you win against the computer??';
+    
+    // Append h1 to container div
+    displayDiv.appendChild(displayMsg);
+    
+    // Append container div to the body
+    document.body.appendChild(displayDiv);
     // Create buttons and append to the DOM
     const btnDiv = document.createElement("div");
     btnDiv.id = "buttons"
