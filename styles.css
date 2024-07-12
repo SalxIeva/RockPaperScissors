@@ -1,0 +1,79 @@
+body {
+    background-color: rgb(251, 243, 234);
+    margin: 40px;
+}
+
+#buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+button {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: rgb(182, 238, 214);
+    font-weight: 800;
+    font-size: 28px;
+    border: 1px solid #000;
+}
+
+button:hover {
+    background-color: rgb(244, 190, 224);
+    box-shadow: 5px 2px 2px #373737;
+}
+
+
+div {
+    margin-top: 10px; 
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#score {
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    margin: 40px;
+}
+
+#result {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: bisque;
+    padding: 10px;
+}
+
+#round {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+#restart {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#restart button {
+    background-color: #bb1414;
+    color: bisque;
+}
+
+#restart button:hover {
+    background-color: #850303;
+}
+
+h1 {
+    text-align: center;
+    background-color: bisque;
+    padding: 20px;
+    margin-bottom: 100px;
+    box-shadow: 10px 5px 5px #373737;
+    font-style: italic;
+}
